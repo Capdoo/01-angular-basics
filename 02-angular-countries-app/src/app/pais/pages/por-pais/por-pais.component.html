@@ -1,0 +1,53 @@
+<div class="animate__animated animate__bounce animate__delay">
+    <h2>Por País</h2>
+    <hr>
+
+    <div class="row">
+        <div class="col">
+            <!-- Se inicia el método buscar de por-pais-component usando la info del $event en app-pais-input -->
+            <app-pais-input (onEnter)="buscar( $event )"
+                            (onDebounce)="sugerencias( $event )"
+                            placeholder = "Buscar pais">
+            </app-pais-input>
+        </div>
+    </div>
+
+    <!-- Para las sugerencias -->
+    <ul *ngIf="termino.length > 0"
+        class="list-group">
+        <li *ngFor = "let paises of paisesSugeridos"
+            class="list-group-item list-group-item-action">
+
+            <a class="nav-link"
+                [routerLink] = "['/pais', paises.cca2]">
+            {{ paises.name.common }}</a>
+        </li>
+
+        <li class="list-group-item list-group-item-action">
+
+        <a  
+            class="nav-link"
+            (click)="buscarSugerido(termino)">
+            Buscar "{{termino}}"
+        </a>
+
+        </li>
+    </ul>
+
+
+    <hr>
+</div>
+
+
+<div *ngIf="hayError" class="alert alert-danger">
+    No sé encontró nada con el término {{termino}}
+</div>
+
+<div *ngIf="paises.length > 0" class="row">
+    <div class="col">
+
+        <!-- Se envia al mini componente el valor del atributo -->
+        <app-pais-tabla [paises]="paises"></app-pais-tabla>     
+
+    </div>
+</div>
