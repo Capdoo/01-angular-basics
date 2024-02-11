@@ -10,7 +10,9 @@ import './style.css'
 // import './06-function-destructuring';
 // import './07-import-export';
 // import './08-classes';
-import './09-generics';
+// import './09-generics';
+// import './10-decorators';
+import './11-optional-chaining';
 
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `

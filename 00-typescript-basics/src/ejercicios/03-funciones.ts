@@ -40,38 +40,8 @@ const nuevoPersonaje: PersonajeLOR = {
 curar(nuevoPersonaje, 20);
 nuevoPersonaje.mostrarHp();
 
-
-
-
-
-
-
 const resultado = multiplicar(5,10);
 const resultado2 = multiplicar(5,0,10);
 
-
 console.log(resultado);
 console.log(resultado2);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
